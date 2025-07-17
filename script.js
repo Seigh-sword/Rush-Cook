@@ -65,3 +65,35 @@ pan.addEventListener("drop", e => {
     }, 300);
   }
 });
+// 🔊 Play background music
+document.getElementById("bg-music").volume = 0.4; // volume 40%
+
+// 🎯 Drink Fill Logic
+let fillLevel = 0;
+const fillElem = document.getElementById("fill-level");
+const statusElem = document.getElementById("drink-status");
+const pourBtn = document.getElementById("pour-btn");
+
+const perfectFill = Math.floor(Math.random() * 40) + 40; // 40–80% perfect zone
+
+pourBtn.addEventListener("click", () => {
+  if (fillLevel >= 100) {
+    statusElem.textContent = "🍺 Too full! Try again!";
+    return;
+  }
+
+  fillLevel += Math.floor(Math.random() * 10) + 5; // +5 to 15%
+  if (fillLevel > 100) fillLevel = 100;
+
+  fillElem.style.height = `${fillLevel}%`;
+
+  if (fillLevel >= perfectFill && fillLevel <= perfectFill + 5) {
+    statusElem.textContent = "✅ Perfect fill! Cheers!";
+  } else if (fillLevel > perfectFill + 10) {
+    statusElem.textContent = "💦 You spilled it! Too much!";
+  } else if (fillLevel === 100) {
+    statusElem.textContent = "🚫 Maxed out. No more space!";
+  } else {
+    statusElem.textContent = "⏳ Keep pouring...";
+  }
+});

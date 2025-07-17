@@ -1,0 +1,90 @@
+/* 👨‍🍳 Resetting default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #fff8e1, #ffe0b2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+/* 🍔 Title */
+h1 {
+  font-size: 2.5rem;
+  color: #ff5722;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px #ffc107;
+}
+
+/* 🍅 Ingredients area */
+#ingredients {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 25px;
+  padding: 15px;
+  background: #fff3e0;
+  border: 4px dashed #ffa726;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 600px;
+}
+
+/* 🥒 Individual ingredient items */
+.ingredient {
+  padding: 10px 15px;
+  background: #ffcc80;
+  border: 2px solid #fb8c00;
+  border-radius: 10px;
+  cursor: grab;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  user-select: none;
+  transition: transform 0.2s;
+}
+
+.ingredient:hover {
+  transform: scale(1.1);
+  background: #ffe0b2;
+}
+
+/* 🍳 Pan (drop zone) */
+#pan {
+  width: 80%;
+  max-width: 500px;
+  min-height: 150px;
+  background: #c8e6c9;
+  border: 5px solid #2e7d32;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+#pan:hover {
+  background: #a5d6a7;
+}
+
+/* 🍽️ Order text */
+#order-text {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: #4e342e;
+  font-weight: bold;
+  text-align: center;
+  background: #ffe0b2;
+  padding: 10px 15px;
+  border-radius: 12px;
+  border: 2px solid #ff9800;
+}
